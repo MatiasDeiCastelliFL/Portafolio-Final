@@ -9,7 +9,7 @@ import {
 import { obtenerProjectoFillter } from "../../redux/actions/ThunksProyecto";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-const ComponentCards = ({ name }) => {
+export const ComponentCards = ({ name }) => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(obtenerProjectoFillter());
@@ -49,4 +49,3 @@ const ComponentCards = ({ name }) => {
   );
 };
 ComponentCards.propTypes = undefined;
-export default ComponentCards;

@@ -2,7 +2,8 @@ import Contacto from "./Contacto";
 import AboutMi from "../componentHome/AboutMi";
 import { General } from "../../functions/ComponentHome";
 import Herramienta from "./Herramienta";
-import ComponentCards from "src/components/componentCard/ComponentCards.jsx";
+import { ComponentCards } from "../componentCard/componentCards";
+
 const Home = () => {
   return (
     <General>
