@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import { NavLink } from "react-router-dom";
-import ComponentDestacado from "./componentDestacado";
+import ComponentDestacado from "./ComponentDestacado";
 import {
   BoxComponentCard,
   TextContactTitle,
@@ -10,7 +10,7 @@ import { obtenerProjectoFillter } from "../../redux/actions/ThunksProyecto";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
-const ComponentCards = ({ name }) => {
+const Component = ({ name }) => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(obtenerProjectoFillter());
@@ -49,5 +49,5 @@ const ComponentCards = ({ name }) => {
     </BoxComponentCard>
   );
 };
-ComponentCards.propTypes = undefined;
-export default ComponentCards;
+Component.propTypes = undefined;
+export default Component;

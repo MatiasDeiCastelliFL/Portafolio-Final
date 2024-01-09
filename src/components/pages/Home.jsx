@@ -2,14 +2,16 @@ import Contacto from "./Contacto";
 import AboutMi from "../componentHome/AboutMi";
 import { General } from "../../functions/ComponentHome";
 import Herramienta from "./Herramienta";
-import ComponentCards from "../componentCard/componentCards";
+import Component from "../componentCard/Component";
+
+
 
 
 const Home = () => {
   return (
     <General>
       <AboutMi />
-      <ComponentCards name="DESTACADOS" />
+      <Component name="DESTACADOS" />
       <Herramienta />
       <Contacto />
     </General>
