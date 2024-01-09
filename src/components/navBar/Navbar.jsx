@@ -18,7 +18,9 @@ import HomeIcon from "@mui/icons-material/Home";
 import { NavLink } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { saveAs } from "file-saver";
+import { useSelector } from "react-redux";
 const Navbar = () => {
+  const profile = useSelector((State) => State.profile.profile);
   const [open, setOpen] = useState(false);
   const navLinks = [
     { title: "Inicio", path: "/#home", icon: <HomeIcon /> },
@@ -37,7 +39,7 @@ const Navbar = () => {
 
   const handleDownloadPdf = () => {
     // Aquí puedes realizar lógica para generar el PDF o proporcionar la URL del PDF
-    const pdfUrl = "URL_DEL_PDF_O_GENERADOR_DEL_PDF";
+    const pdfUrl = profile?.rutPdf;
 
     // Descargar el PDF usando file-saver
     saveAs(pdfUrl, "Curriculum Matias Marcelo Dei Castelli.pdf");
@@ -74,12 +76,35 @@ const Navbar = () => {
           </Typography>
           <Box sx={{ display: "flex" }}>
             {navLinks.map((navLink) => (
-              <Button
-                color="inherit"
+              <Box
                 key={navLink.title}
-                startIcon={navLink.icon}
                 component={navLink.title == "Proyectos" ? NavLink : HashLink}
                 to={navLink.path}
+                color="inherit"
+              >
+                <Button
+                  color="inherit"
+                  startIcon={navLink.icon}
+                  sx={{
+                    marginLeft: 1,
+                    "&:hover": {
+                      transition: "transform 2.2s",
+                      color: "white",
+                      bgcolor: "rgb(1, 23, 45)",
+                      borderRadius: "50px",
+                      transform: "rotateY(360deg)",
+                    },
+                  }}
+                >
+                  {navLink.title}
+                </Button>
+              </Box>
+            ))}
+            <Box onClick={handleDownloadPdf} color="inherit" key={"Curriculum"}>
+              <Button
+                color="inherit"
+                key={"Curriculum"}
+                startIcon={<PictureAsPdfIcon />}
                 sx={{
                   marginLeft: 1,
                   "&:hover": {
@@ -91,27 +116,9 @@ const Navbar = () => {
                   },
                 }}
               >
-                {navLink.title}
+                {"Curriculum"}
               </Button>
-            ))}
-            <Button
-              color="inherit"
-              key={"Curriculum"}
-              startIcon={<PictureAsPdfIcon />}
-              sx={{
-                marginLeft: 1,
-                "&:hover": {
-                  transition: "transform 2.2s",
-                  color: "white",
-                  bgcolor: "rgb(1, 23, 45)",
-                  borderRadius: "50px",
-                  transform: "rotateY(360deg)",
-                },
-              }}
-              onClick={handleDownloadPdf}
-            >
-              {"Curriculum"}
-            </Button>
+            </Box>
           </Box>
         </Toolbar>
       </AppBar>

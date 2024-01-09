@@ -1,17 +1,30 @@
 import {
   Box,
+  Button,
   Divider,
   List,
   ListItem,
   ListItemButton,
   ListItemIcon,
 } from "@mui/material";
+import { saveAs } from "file-saver";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { NavLink } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import { useSelector } from "react-redux";
+import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
 const NavListDrawer = ({ navLin, setOpen }) => {
+  const handleDownloadPdf = () => {
+    // Aquí puedes realizar lógica para generar el PDF o proporcionar la URL del PDF
+    const pdfUrl = profile?.rutPdf;
+
+    // Descargar el PDF usando file-saver
+    saveAs(pdfUrl, "Curriculum Matias Marcelo Dei Castelli.pdf");
+    setOpen(false);
+  };
+  const profile = useSelector((State) => State.profile.profile);
   return (
     <div>
       <Box sx={{ width: 300 }}>
@@ -29,6 +42,17 @@ const NavListDrawer = ({ navLin, setOpen }) => {
                 </ListItemButton>
               </ListItem>
             ))}
+
+            <ListItem key="Curriculum">
+              <ListItemIcon>{<PictureAsPdfIcon />}</ListItemIcon>
+              <ListItemButton
+                component={"button"}
+                onClick={handleDownloadPdf}
+                sx={{ fontSize: 15 }}
+              >
+                Curriculum
+              </ListItemButton>
+            </ListItem>
           </List>
         </nav>
         <Divider />
