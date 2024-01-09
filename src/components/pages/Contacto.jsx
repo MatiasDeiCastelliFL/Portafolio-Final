@@ -10,7 +10,7 @@ import {
   stateError,
   stateMensaje,
 } from "../../functions/global";
-import LinkRedes from "../componentContact/linkRedes";
+import LinkRedes from "../componentContact/Redes";
 import {
   CardContentContact,
   Contact,

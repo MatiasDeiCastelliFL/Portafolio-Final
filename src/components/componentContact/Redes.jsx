@@ -1,7 +1,7 @@
 import { Button } from "@mui/material";
 import { listArrayRed } from "../../functions/global";
 
-const LinkRedes = () => {
+const Redes = () => {
   return listArrayRed.map((red) => (
     <Button
       key={red.key}
@@ -24,4 +24,4 @@ const LinkRedes = () => {
   ));
 };
 
-export default LinkRedes;
+export default Redes;
