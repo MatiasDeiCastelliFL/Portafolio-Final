@@ -1,5 +1,5 @@
 import Contacto from "./Contacto";
-import ComponentCards from "src/components/componentCard/ComponentCards.jsx";
+import ComponentCards from "src/components/componentCard/ComponentCards";
 import AboutMi from "../componentHome/AboutMi";
 import { General } from "../../functions/ComponentHome";
 import Herramienta from "./Herramienta";
