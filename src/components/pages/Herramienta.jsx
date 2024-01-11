@@ -25,10 +25,6 @@ const Herramienta = () => {
     dispatch(Categories(page));
   }, [page]);
 
-  useEffect(() => {
-    dispatch(Categories());
-  }, []);
-
   const GridCard = styled("Grid")(({ theme }) => ({
     marginTop: "10px",
     display: "flex",
@@ -122,19 +118,17 @@ const Herramienta = () => {
         sx={{
           background: "#fff",
           borderRadius: "50px",
-          maxWidth: "fit-content", // Establecer el ancho máximo a "fit-content"
-          marginTop: "10px",
+          maxWidth: "fit-content",
           margin: "auto",
           "& .MuiPaginationItem-root": {
-            // Estilos específicos para los elementos de paginación
-            borderRadius: "100%", // Hace que los elementos de paginación sean círculos
-            width: "24px", // Ajusta el ancho del círculo
-            height: "24px", // Ajusta la altura del círculo
-            margin: "4px 4px", // Ajusta el espacio entre los elementos
-            fontSize: "14px", // Ajusta el tamaño del número en el círculo
+            borderRadius: "100%",
+            width: "24px",
+            height: "24px",
+            margin: "4px 4px",
+            fontSize: "14px",
             "&.Mui-selected": {
-              backgroundColor: "rgb(1, 23, 45)", // Cambia el color del círculo cuando está seleccionado
-              color: "#fff", // Cambia el color del texto cuando está seleccionado
+              backgroundColor: "rgb(1, 23, 45)",
+              color: "#fff",
             },
           },
         }}

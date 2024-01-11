@@ -2,19 +2,21 @@ import styled from "@emotion/styled";
 
 export const CardProyectos = styled("div")(() => ({
   width: 350,
-  height: 480,
+  height: 400,
   display: "flex",
   flexDirection: "column",
-  background: "white",
 }));
 
 export const CardProyectosFlex = styled("div")(({ theme }) => ({
   marginTop: "20px",
   display: "flex",
-  justifyContent: "center",
+  justifyContent: "flex-start",
   alignItems: "center",
   gap: "20px",
-
+  flexWrap: "wrap",
+  [theme.breakpoints.down("lfg")]: {
+    justifyContent: "center",
+  },
   [theme.breakpoints.down("sg")]: {
     flexDirection: "column",
   },

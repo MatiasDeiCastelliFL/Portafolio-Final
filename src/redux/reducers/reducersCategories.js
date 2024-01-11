@@ -10,7 +10,7 @@ export const categoriesSlice = createSlice({
       state.cargando = true;
     },
     obtenerCategories: (state, action) => {
-      state.cargandoCategories = false;
+      state.cargando = false;
       state.categories = action.payload;
     },
   },

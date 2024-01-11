@@ -15,6 +15,7 @@ const Component = ({ name }) => {
   useEffect(() => {
     dispatch(obtenerProjectoFillter());
   }, []);
+
   const proyectos = useSelector((state) => state.project.project);
   return (
     <BoxComponentCard>

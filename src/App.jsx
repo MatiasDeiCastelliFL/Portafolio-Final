@@ -1,18 +1,10 @@
 import Container from "@mui/material/Container";
-
 import { Route, Routes } from "react-router-dom";
 import Home from "./components/pages/Home";
 import Proyecto from "./components/pages/Proyecto";
 import Navbar from "./components/navBar/Navbar";
-import { useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { obtenerProfiles } from "./redux/actions/ThunksProfile";
-const App = () => {
-  const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(obtenerProfiles());
-  }, []);
+const App = () => {
   return (
     <>
       <Container
