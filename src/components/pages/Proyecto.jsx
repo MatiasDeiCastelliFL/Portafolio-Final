@@ -184,7 +184,7 @@ const Proyecto = () => {
                             color="text.secondary"
                             sx={{
                               height: 80,
-                              width: "80%",
+                              width: "100%",
                               textAlign: "center",
                               margin: "auto",
                               color: "#fff  ",

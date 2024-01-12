@@ -32,7 +32,7 @@ const Component = ({ name }) => {
       >
         <TextContactTitle>{name}</TextContactTitle>
         {name == "DESTACADOS" && (
-          <Box component={NavLink} to="/proyecto" title="Todos los proyectos">
+          <Box component={NavLink} to="/proyectos" title="Todos los proyectos">
             <ArrowOutwardIcon fontSize="large" sx={{ color: "#fff" }} />
           </Box>
         )}
