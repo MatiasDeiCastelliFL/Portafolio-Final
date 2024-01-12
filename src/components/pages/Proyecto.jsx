@@ -20,7 +20,7 @@ const Proyecto = () => {
   const { pathname } = useLocation();
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
-  const [limipag, setLimitPage] = useState(4);
+  const [limipag, setLimitPage] = useState(6);
   const handleChange = (e, p) => {
     setPage(p);
   };
@@ -160,39 +160,34 @@ const Proyecto = () => {
                           marginTop: "auto",
                           padding: 0,
                           position: "absolute",
-                          bottom: 50,
+                          bottom: 20,
                           left: 0,
                           right: 0,
-                          backgroundColor: "rgb(0 33 65 / 80%)",
+                          backgroundColor: "rgb(0 33 65 / 55%)",
                         }}
                       >
-                        <Typography
-                          sx={{
-                            color: "#fff",
-                            textAlign: "center",
-                            fontSize: "20px",
-                            fontWeight: "bold",
-                            paddingBottom: "20px",
-                            marginTop: "5px",
-                          }}
-                        >
-                          Descripción
-                        </Typography>
                         <Box>
-                          <Typography
-                            variant="body2"
-                            color="text.secondary"
+                          <Box
                             sx={{
+                              padding: "10px 5px 5px",
                               height: 80,
-                              width: "100%",
-                              textAlign: "center",
-                              margin: "auto",
-                              color: "#fff  ",
-                              fontWeight: "bold",
                             }}
                           >
-                            {result.descriptions}
-                          </Typography>
+                            <Typography
+                              variant="body2"
+                              color="text.secondary"
+                              sx={{
+                                height: "auto",
+                                width: "100%",
+                                textAlign: "center",
+                                margin: "auto",
+                                color: "#fff  ",
+                                fontWeight: "bold",
+                              }}
+                            >
+                              {result.descriptions}
+                            </Typography>
+                          </Box>
                           <Typography
                             textAlign={"center"}
                             color={"#fff"}
@@ -206,8 +201,8 @@ const Proyecto = () => {
                               justifyContent: "center",
                               alignItems: "center",
                               gap: "20px",
-                              marginTop: "20px",
-                              marginBottom: "20px",
+                              paddingTop: "20px",
+                              paddingBottom: "20px",
                             }}
                           >
                             {result.categories.map((categories) => (
@@ -269,7 +264,7 @@ const Proyecto = () => {
               ))}
           </CardProyectosFlex>
           <Pagination
-            count={Math.ceil(proyectos.project.count / 4)}
+            count={Math.ceil(proyectos.project.count / 6)}
             onChange={handleChange}
             page={page}
             key="pagination-bottom"
