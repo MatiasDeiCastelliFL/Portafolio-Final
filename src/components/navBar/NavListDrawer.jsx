@@ -82,7 +82,7 @@ const NavListDrawer = ({ navLin, setOpen }) => {
             >
               <ListItemButton
                 component="a"
-                href="https://github.com/MatiasDeiCastelliFL?tab=repositories"
+                href="https://github.com/MatiasDeiCastelliFL"
                 target="_blank"
               >
                 <GitHubIcon sx={{ fontSize: 40 }} />

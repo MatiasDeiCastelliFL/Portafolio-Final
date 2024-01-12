@@ -89,7 +89,7 @@ export const listArrayRed = [
     key: 1,
   },
   {
-    href: "https://github.com/MatiasDeiCastelliFL?tab=repositories",
+    href: "https://github.com/MatiasDeiCastelliFL",
     icon: <GitHubIcon style={redes} />,
     key: 2,
   },
